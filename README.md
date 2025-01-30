@@ -26,5 +26,5 @@ Request signatures should be verified using the raw body
 
 1. Messages contain events related to a single event, which can be user action or one of the internal HubSpot mechanisms. They are typically related to a single object, but not always.
 2. Events in a message are not ordered. propertyChange enevts may appear before creation events.
-3. The model only workds with the new style [generic webhook subscriptions](https://developers.hubspot.com/docs/guides/apps/public-apps/create-generic-webhook-subscriptions).
+3. The model only works with the new style [generic webhook subscriptions](https://developers.hubspot.com/docs/guides/apps/public-apps/create-generic-webhook-subscriptions).
 4. Only a subset of objects is included. Feel free to create Pull Requests with additional models as needed.

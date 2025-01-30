@@ -8,8 +8,8 @@ class Event(
     msgspec.Struct,
     frozen=True,
     forbid_unknown_fields=True,
-    rename="camel",
-    tag_field="subscriptionType",
+    rename='camel',
+    tag_field='subscriptionType',
 ):  # type: ignore[call-arg]
     app_id: int
     attempt_number: int
@@ -23,16 +23,12 @@ class Event(
     source_id: Optional[str] = None
 
 
-class CRUDEvent(
-    Event, frozen=True, forbid_unknown_fields=True, rename="camel", kw_only=True
-):  # type: ignore[call-arg]
+class CRUDEvent(Event, frozen=True, forbid_unknown_fields=True, rename='camel', kw_only=True):  # type: ignore[call-arg]
     object_id: int
     object_type_id: str
 
 
-class Change(
-    CRUDEvent, frozen=True, forbid_unknown_fields=True, rename="camel", kw_only=True
-):  # type: ignore[call-arg]
+class Change(CRUDEvent, frozen=True, forbid_unknown_fields=True, rename='camel', kw_only=True):  # type: ignore[call-arg]
     change_flag: str
 
 
@@ -40,18 +36,18 @@ class Creation(
     Change,
     frozen=True,
     forbid_unknown_fields=True,
-    rename="camel",
-    tag="object.creation",
+    rename='camel',
+    tag='object.creation',
 ):  # type: ignore[call-arg]
     pass
 
 
 class AssociationChange(
     Event,
-    tag="object.associationChange",
+    tag='object.associationChange',
     frozen=True,
     forbid_unknown_fields=True,
-    rename="camel",
+    rename='camel',
     kw_only=True,
 ):  # type: ignore[call-arg]
     association_category: str
@@ -67,10 +63,10 @@ class AssociationChange(
 
 class PropertyChange(
     CRUDEvent,
-    tag="object.propertyChange",
+    tag='object.propertyChange',
     frozen=True,
     forbid_unknown_fields=True,
-    rename="camel",
+    rename='camel',
     kw_only=True,
 ):  # type: ignore[call-arg]
     is_sensitive: bool
@@ -81,10 +77,10 @@ class PropertyChange(
 
 class Deletion(
     Change,
-    tag="object.deletion",
+    tag='object.deletion',
     frozen=True,
     forbid_unknown_fields=True,
-    rename="camel",
+    rename='camel',
     kw_only=True,
 ):  # type: ignore[call-arg]
     pass
@@ -92,10 +88,10 @@ class Deletion(
 
 class Merge(
     CRUDEvent,
-    tag="object.merge",
+    tag='object.merge',
     frozen=True,
     forbid_unknown_fields=True,
-    rename="camel",
+    rename='camel',
     kw_only=True,
 ):  # type: ignore[call-arg]
     new_object_id: int
