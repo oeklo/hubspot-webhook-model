@@ -1,3 +1,4 @@
+from collections.abc import Sequence
 from typing import Optional, Union
 
 import msgspec
@@ -89,5 +90,19 @@ class Deletion(
     pass
 
 
-Event_ = Union[Creation, PropertyChange, AssociationChange, Deletion]
+class Merge(
+    CRUDEvent,
+    tag="object.merge",
+    frozen=True,
+    forbid_unknown_fields=True,
+    rename="camel",
+    kw_only=True,
+):  # type: ignore[call-arg]
+    new_object_id: int
+    primary_object_id: int
+    merged_object_ids: Sequence[int]
+    number_of_properties_moved: int
+
+
+Event_ = Union[Creation, PropertyChange, AssociationChange, Deletion, Merge]
 Message = list[Event_]
