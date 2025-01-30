@@ -33,7 +33,7 @@ description = "HubSpot webhook message model"
 name = "hubspot-webhook-model"
 readme = "README.md"
 requires-python = ">=3.9"
-version = "0.1.0"
+version = "0.2.0"
 license = "MIT"
 
 [dependency-groups]
