@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 authors = [
-    { name = "Raphael Krupinski", email = "oeklo.it@fastmail.com" }
+    { name = "Rafal Krupinski", email = "oeklo.it@fastmail.com" }
 ]
 classifiers = [
   "Development Status :: 3 - Alpha",
@@ -34,6 +34,7 @@ name = "hubspot-webhook-model"
 readme = "README.md"
 requires-python = ">=3.9"
 version = "0.1.0"
+license = "MIT"
 
 [dependency-groups]
 dev = [
